@@ -8,10 +8,47 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "TurnEntity",
+"class": "City",
+"language": "GDScript",
+"path": "res://Data/Entities/City.gd"
+}, {
+"base": "TurnEntity",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Data/Entities/Player.gd"
+}, {
+"base": "Node",
+"class": "TurnEngine",
+"language": "GDScript",
+"path": "res://Engine/TurnEngine.gd"
+}, {
+"base": "Node",
+"class": "TurnEntity",
+"language": "GDScript",
+"path": "res://Data/Entities/TurnEntity.gd"
+} ]
+_global_script_class_icons={
+"City": "",
+"Player": "",
+"TurnEngine": "",
+"TurnEntity": ""
+}
+
 [application]
 
 config/name="game"
 config/icon="res://icon.png"
+
+[autoload]
+
+GameContext="*res://Data/GameContext.gd"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
 
 [physics]
 
