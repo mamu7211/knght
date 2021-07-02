@@ -2,18 +2,21 @@ extends Node
 
 
 var players = []
-var cities = []
-
+var turn = 0
 
 func create_new_game():
-	pass
+	create_players()
+
+
+func create_players():
+	for i in 10:
+		players.append("Player %d" % i)
 
 
 func get_statistics():
 	return {
-		"turn": 0,
-		"players": {},
-		"cities": {
-			"count" : cities.size()
-		}
+		"turn": turn,
+		"players": {
+			
+		},
 	}

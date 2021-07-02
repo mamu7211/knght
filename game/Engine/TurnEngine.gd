@@ -12,5 +12,5 @@ func _process(delta):
 	pass
 
 
-func do_turn():
-	print_debug("")
+func current_player_done():
+	pass
