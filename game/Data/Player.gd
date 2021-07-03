@@ -1,13 +1,16 @@
+extends Node
 class_name Player
 
 
 var player_name : String = "n/a"
 var player_type = Globals.PLAYER_TYPE.HUMAN
-var controller : PlayerController = null
+
+
+onready var state_machine : StateMachine = $StateMachine
 
 
 func _ready():
-	pass # Replace with function body.
+	state_machine.start()
 
 
 func setup(player_name, player_type):
@@ -15,13 +18,13 @@ func setup(player_name, player_type):
 	self.player_type = player_type
 
 
+func start_turn():
+	state_machine.start_by_name("StartTurn")
+
+
 func as_text():
-	return "%s, %s" % [ player_name, Translator.get_player_type(player_type) ]
+	return "%s [%s]" % [ player_name, Translator.get_player_type(player_type) ]
 
 
-func end_turn():
-	pass
-
-
-func has_turn_ended() -> bool:
-	return false
+func _on_StateMachine_state_changed(old_state, new_state):
+	print("Player %s : '%s' > '%s'" % [as_text(), old_state, new_state])

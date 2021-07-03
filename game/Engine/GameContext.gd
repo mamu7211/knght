@@ -1,6 +1,10 @@
 # GameContext
 extends Node
 
+
+var player_scene = load("res://Data/Player.tscn")
+
+
 signal setup_completed()
 
 
@@ -9,24 +13,26 @@ var current_player_index = 0
 var turn_engine = null
 var ready : bool = false
 var limit_turns : bool = true
-var max_turns : int = 5
+var max_turns : int = 50000
 
 
-func create_new_game():
-	create_players()
-
-
-func setup(turn_engine):
+func setup(turn_engine, data_root:Node):
 	self.turn_engine = turn_engine
-	create_players()
+	for c in data_root.get_children():
+		c.queue_free()
+	create_players(data_root)
 	emit_signal("setup_completed")
 
 
-func create_players():
+func create_players(data_root):
+	var player_node = Node2D.new()
+	player_node.name = "Players"
+	data_root.add_child(player_node)
 	for i in Globals.MAX_PLAYERS:
-		var player = Player.new()
+		var player = player_scene.instance()
 		player.setup("Player-%d" % i, Globals.PLAYER_TYPE.HUMAN)
 		players.append(player)
+		player_node.add_child(player)
 
 
 func init_player(index:int, player_name:String, player_type:int):
