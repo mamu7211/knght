@@ -9,7 +9,7 @@ var current_player_index = 0
 var turn_engine = null
 var ready : bool = false
 var limit_turns : bool = true
-var max_turns : int = 20
+var max_turns : int = 5
 
 
 func create_new_game():
@@ -20,7 +20,6 @@ func setup(turn_engine):
 	self.turn_engine = turn_engine
 	create_players()
 	emit_signal("setup_completed")
-	
 
 
 func create_players():

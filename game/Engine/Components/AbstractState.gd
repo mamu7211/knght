@@ -15,10 +15,6 @@ func process(delta:float):
 	running_since += delta
 
 
-func integrate_forces(_state:Physics2DDirectBodyState):
-	pass
-
-
 func physics_process(_delta:float):
 	pass
 

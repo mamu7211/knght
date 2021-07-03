@@ -7,8 +7,12 @@ var end_finished = false
 func start(old_state, new_params = {}):
 	.start(old_state, new_params)
 	end_finished = false
-	# TODO
-	end_finished = true
+
+
+func process(delta:float):
+	.process(delta)
+	if running_since > 1.0:
+		end_finished = true
 
 
 func get_next_state():
@@ -18,4 +22,4 @@ func get_next_state():
 	if end_finished:
 		return build_return_state("NextTurn")
 		
-	return null
+	return .get_next_state()
