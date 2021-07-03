@@ -18,8 +18,12 @@ func setup(player_name, player_type):
 	self.player_type = player_type
 
 
-func start_turn():
-	state_machine.start_by_name("StartTurn")
+func set_state(state_name):
+	state_machine.start_by_name(state_name)
+
+
+func get_state():
+	return state_machine.get_current_state_name()
 
 
 func as_text():

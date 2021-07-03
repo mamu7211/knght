@@ -19,7 +19,7 @@ func end_turn():
 
 
 func next_turn():
-	state_machine.start_by_name("Start")
+	state_machine.start_by_name("StartTurn")
 
 
 func _on_StateMachine_state_changed(old_state, new_state):

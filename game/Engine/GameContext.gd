@@ -39,19 +39,21 @@ func init_player(index:int, player_name:String, player_type:int):
 	players[index].setup(player_name, players[index].player_type)
 
 
+func select_first_player():
+	current_player_index = 0
+
+
 func get_current_player():
-	if players != null and players.size() > 0 and players.size() < current_player_index:
+	if players != null and is_valid_player():
 		return players[current_player_index]
 	else:
 		return null
 
 
 func select_next_player():
-	if get_current_player().has_turn_ended():
-		current_player_index += 1
-		if not _valid_player():
-			current_player_index = 0
+	current_player_index += 1
+	print("PLAYER > %d" % current_player_index)
 
 
-func _valid_player() -> bool:
+func is_valid_player() -> bool:
 	return current_player_index >= 0 and current_player_index < players.size()

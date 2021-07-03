@@ -9,7 +9,7 @@ func start(old_state, new_params = {}):
 	.start(old_state, new_params)
 	start_finished = false
 	for player in GameContext.players:
-		player.start_state()
+		player.set_state("StartTurn")
 
 
 func process(delta:float):

@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _ready():
-	GameContext.setup($TurnEngine, self);
+	GameContext.setup($TurnEngine, $DataRoot);
 	GameContext.init_player(0, "First Human", Globals.PLAYER_TYPE.HUMAN)
 	GameContext.init_player(1, "First Computer", Globals.PLAYER_TYPE.COMPUTER)
 	GameContext.init_player(2, "Second Human", Globals.PLAYER_TYPE.HUMAN)
