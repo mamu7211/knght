@@ -24,7 +24,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Engine/TurnEngine.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "TurnEntity",
 "language": "GDScript",
 "path": "res://Data/Entities/TurnEntity.gd"

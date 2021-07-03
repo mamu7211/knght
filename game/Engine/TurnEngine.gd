@@ -2,6 +2,7 @@ extends Node
 class_name TurnEngine
 
 
+var current_player_index : int = -1
 
 
 func _ready():
@@ -13,4 +14,5 @@ func _process(delta):
 
 
 func current_player_done():
-	pass
+	GameContext.select_next_player()
+
