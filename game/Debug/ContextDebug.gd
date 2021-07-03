@@ -5,12 +5,12 @@ var labels = {}
 
 
 onready var label_container = $Control/HBoxContainer/VBoxContainer
-onready var cities_label = $Control/HBoxContainer/VBoxContainer/CitiesLabel
 
 
 func _ready():
-	add_info("turn", "Turn: %d", 0)
-	add_info("current_player", "Player: %s - %s", ["-none-", "-1"])
+	add_info("te_turn", "Turn: %d", 0)
+	add_info("te_state", "TurnEngine state: %s", "n/a")
+	add_info("current_player", "Player: %s", "n/a")
 	$Timer.start(0.1)
 
 
@@ -31,5 +31,14 @@ func add_info(key, label_text, default_value):
 
 
 func _on_Timer_timeout():
-	update_info("turn", GameContext.turn)
-	update_info("current_player", [GameContext.get_current_player().player_name, GameContext.current_player_index])
+	if GameContext.turn_engine != null:
+		update_info("te_turn", GameContext.turn_engine.turn)
+		update_info("te_state", GameContext.turn_engine.state_machine.get_current_state_name())
+	else:
+		update_info("te_turn", -1)
+		update_info("te_state", "<null>")
+		
+	if GameContext.get_current_player() != null:
+		update_info("current_player", GameContext.get_current_player().as_text())
+	else:
+		update_info("current_player", "n/a")

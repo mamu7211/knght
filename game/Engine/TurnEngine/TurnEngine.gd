@@ -1,0 +1,30 @@
+extends Node
+class_name TurnEngine
+
+
+var current_player_index : int = -1
+var turn : int = 0
+
+
+onready var state_machine : StateMachine = $StateMachine
+
+
+func _ready():
+	state_machine.start()
+	GameContext.connect("setup_completed", self, "_on_setup_completed")
+
+
+func end_turn():
+	state_machine.start_by_name("End")
+
+
+func next_turn():
+	state_machine.start_by_name("Start")
+
+
+func _on_StateMachine_state_changed(old_state, new_state):
+	print("Turn Engine %s > %s" % [old_state, new_state])
+
+
+func _on_setup_completed():
+	state_machine.start_by_name("Init")

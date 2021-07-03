@@ -9,41 +9,92 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "TurnEntity",
-"class": "City",
+"base": "Node",
+"class": "AbstractState",
 "language": "GDScript",
-"path": "res://Data/Entities/City.gd"
+"path": "res://Engine/Components/AbstractState.gd"
 }, {
-"base": "TurnEntity",
+"base": "Reference",
 "class": "Player",
 "language": "GDScript",
-"path": "res://Data/Entities/Player.gd"
+"path": "res://Data/Player.gd"
+}, {
+"base": "Reference",
+"class": "PlayerController",
+"language": "GDScript",
+"path": "res://Engine/PlayerController.gd"
+}, {
+"base": "Reference",
+"class": "StateChange",
+"language": "GDScript",
+"path": "res://Engine/Components/StateChange.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://Engine/Components/StateMachine.gd"
 }, {
 "base": "Node",
 "class": "TurnEngine",
 "language": "GDScript",
-"path": "res://Engine/TurnEngine.gd"
+"path": "res://Engine/TurnEngine/TurnEngine.gd"
 }, {
-"base": "Reference",
-"class": "TurnEntity",
+"base": "AbstractState",
+"class": "TurnEngineEndGameStateState",
 "language": "GDScript",
-"path": "res://Data/Entities/TurnEntity.gd"
+"path": "res://Engine/TurnEngine/TurnEngineEndGameState.gd"
+}, {
+"base": "AbstractState",
+"class": "TurnEngineEndTurnState",
+"language": "GDScript",
+"path": "res://Engine/TurnEngine/TurnEngineEndTurnState.gd"
+}, {
+"base": "AbstractState",
+"class": "TurnEngineInitState",
+"language": "GDScript",
+"path": "res://Engine/TurnEngine/TurnEngineInitState.gd"
+}, {
+"base": "AbstractState",
+"class": "TurnEngineNextTurnState",
+"language": "GDScript",
+"path": "res://Engine/TurnEngine/TurnEngineNextTurnState.gd"
+}, {
+"base": "AbstractState",
+"class": "TurnEnginePlayTurnState",
+"language": "GDScript",
+"path": "res://Engine/TurnEngine/TurnEnginePlayTurnState.gd"
+}, {
+"base": "AbstractState",
+"class": "TurnEngineStartState",
+"language": "GDScript",
+"path": "res://Engine/TurnEngine/TurnEngineStartState.gd"
 } ]
 _global_script_class_icons={
-"City": "",
+"AbstractState": "",
 "Player": "",
+"PlayerController": "",
+"StateChange": "",
+"StateMachine": "",
 "TurnEngine": "",
-"TurnEntity": ""
+"TurnEngineEndGameStateState": "",
+"TurnEngineEndTurnState": "",
+"TurnEngineInitState": "",
+"TurnEngineNextTurnState": "",
+"TurnEnginePlayTurnState": "",
+"TurnEngineStartState": ""
 }
 
 [application]
 
 config/name="game"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-GameContext="*res://Data/GameContext.gd"
+Globals="*res://Globals.gd"
+Translator="*res://Translations/Translator.gd"
+GameContext="*res://GameContext.gd"
 
 [display]
 

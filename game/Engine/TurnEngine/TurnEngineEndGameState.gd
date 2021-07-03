@@ -1,0 +1,3 @@
+extends AbstractState
+class_name TurnEngineEndGameStateState
+
