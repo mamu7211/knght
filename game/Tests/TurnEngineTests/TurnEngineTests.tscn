@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Engine/TurnEngine/TurnEngine.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Tests/EntityTests/TurnEngineTests.gd" type="Script" id=2]
+[ext_resource path="res://Tests/TurnEngineTests/TurnEngineTests.gd" type="Script" id=2]
 [ext_resource path="res://Debug/ContextDebug.tscn" type="PackedScene" id=3]
 
 [node name="TurnEngineTests" type="Node2D"]
