@@ -82,7 +82,7 @@ _global_script_classes=[ {
 "base": "AbstractState",
 "class": "TurnEngineNextTurnState",
 "language": "GDScript",
-"path": "res://Engine/TurnEngine/TurnEngineNextTurnState.gd"
+"path": "res://Engine/TurnEngine/TurnEngineWaitingForNextTurnState.gd"
 }, {
 "base": "AbstractState",
 "class": "TurnEnginePlayTurnState",

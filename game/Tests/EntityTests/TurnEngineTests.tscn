@@ -9,17 +9,7 @@ script = ExtResource( 2 )
 
 [node name="ContextDebug" parent="." instance=ExtResource( 3 )]
 
-[node name="EndTurn" type="Button" parent="."]
-margin_left = 1019.59
-margin_top = 147.929
-margin_right = 1273.59
-margin_bottom = 261.929
-text = "Start Turn"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="StartTurn" type="Button" parent="."]
+[node name="NextTurn" type="Button" parent="."]
 margin_left = 1017.0
 margin_top = 302.0
 margin_right = 1271.0
@@ -33,5 +23,4 @@ __meta__ = {
 
 [node name="DataRoot" type="Node2D" parent="."]
 
-[connection signal="pressed" from="EndTurn" to="." method="_on_EndTurn_pressed"]
-[connection signal="pressed" from="StartTurn" to="." method="_on_StartTurn_pressed"]
+[connection signal="pressed" from="NextTurn" to="." method="_on_StartTurn_pressed"]

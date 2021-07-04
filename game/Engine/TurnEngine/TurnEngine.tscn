@@ -4,7 +4,7 @@
 [ext_resource path="res://Engine/TurnEngine/TurnEngine.gd" type="Script" id=2]
 [ext_resource path="res://Engine/TurnEngine/TurnEngineStartState.gd" type="Script" id=3]
 [ext_resource path="res://Engine/TurnEngine/TurnEnginePlayTurnState.gd" type="Script" id=4]
-[ext_resource path="res://Engine/TurnEngine/TurnEngineNextTurnState.gd" type="Script" id=5]
+[ext_resource path="res://Engine/TurnEngine/TurnEngineWaitingForNextTurnState.gd" type="Script" id=5]
 [ext_resource path="res://Engine/TurnEngine/TurnEngineEndTurnState.gd" type="Script" id=6]
 [ext_resource path="res://Engine/TurnEngine/TurnEngineInitState.gd" type="Script" id=7]
 [ext_resource path="res://Engine/TurnEngine/TurnEngineEndGameState.gd" type="Script" id=8]
@@ -27,7 +27,7 @@ script = ExtResource( 4 )
 [node name="EndTurn" type="Node" parent="StateMachine"]
 script = ExtResource( 6 )
 
-[node name="NextTurn" type="Node" parent="StateMachine"]
+[node name="WaitingForNextTurn" type="Node" parent="StateMachine"]
 script = ExtResource( 5 )
 
 [node name="End" type="Node" parent="StateMachine"]

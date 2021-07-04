@@ -20,6 +20,6 @@ func get_next_state():
 		return build_return_state("End")
 		
 	if end_finished:
-		return build_return_state("NextTurn")
+		return build_return_state("WaitingForNextTurn")
 		
 	return .get_next_state()
