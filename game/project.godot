@@ -90,9 +90,9 @@ _global_script_classes=[ {
 "path": "res://Engine/TurnEngine/TurnEnginePlayTurnState.gd"
 }, {
 "base": "AbstractState",
-"class": "TurnEngineStartState",
+"class": "TurnEngineStartTurnState",
 "language": "GDScript",
-"path": "res://Engine/TurnEngine/TurnEngineStartState.gd"
+"path": "res://Engine/TurnEngine/TurnEngineStartTurnState.gd"
 } ]
 _global_script_class_icons={
 "AbstractState": "",
@@ -111,7 +111,7 @@ _global_script_class_icons={
 "TurnEngineInitState": "",
 "TurnEngineNextTurnState": "",
 "TurnEnginePlayTurnState": "",
-"TurnEngineStartState": ""
+"TurnEngineStartTurnState": ""
 }
 
 [application]
